@@ -1,0 +1,111 @@
+/* Fundo da Tela  */
+html, body { 
+    height:100%;
+    background: linear-gradient(to bottom,#ffffff, #0000006a);
+    cursor:crosshair;
+}
+
+button {
+  cursor: crosshair;
+}
+
+#acerto-msg, #contador, #temporizador {
+  pointer-events: none;
+}
+
+/* Botão de Iniciar o Jogo */
+#iniciar-jogo { 
+  width: 150px;
+  height: 70px;
+  background-color: #000000;
+  color: white;
+  border-radius: 35px;
+  font-size: 1.3em;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* Área em que o alvo se move */
+#container {
+    width: 800px;
+    height: 550px;
+    margin: auto;
+    align-self: center;
+    position: relative;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    background-color: rgb(241, 221, 183);
+    background-image: url('imgs/fundofogo.png');
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: crosshair;
+    
+  }
+  
+ 
+  /* Estilização do Alvo  */
+  #alvo {
+    background-color: rgb(255, 255, 255);
+    width: 80px;
+    height: 80px;
+    border: 2px solid red;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: all 0.1s ease;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(50%, 50%); */
+  }
+  
+  /* Estilização da Parte Interna do Alvo  */
+  #alvo::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: red;
+    transition: all 0.1s ease
+  }
+
+  /* Estilização do Contador de Acertos  */
+   #contador {
+    display: block;
+    font-size: 50px;
+    font-style:italic;
+    position: absolute;
+    top: 100%;
+    right: 70%;
+  }
+
+  /* Estilização do Temporizador  */
+  #temporizador {
+    display: block;
+    font-size: 50px;
+    font-style:italic;
+    position: absolute;
+    top: 100%;
+    right: 3%;
+  }
+
+  /* Mensagem de Acerto no Alvo */
+  .acerto-msg {
+    position: absolute;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    display: none;
+  }
+
